@@ -2,9 +2,46 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>Singapore Quiz</title>
   </head>
   <body>
 
-  </body>
+    <!-- <p>Click the button to demonstrate the prompt box.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p> -->
+
+  <div class = "main">
+    <h3>Do you know Singapore?</h3>
+    <p>Challenge your friend to a quiz!</p>
+
+      <div class = "startButton" id = "startQuizBtn"> Start Now! </div>
+
+      <div class = "container">
+      <div id="QnNo"></div>
+      <div id = "quizQns"> Quiz question here </div>
+      <div class = "ansButton" id = "trueBtn"> TRUE </div>
+      <div class = "ansButton" id = "falseBtn"> FALSE </div>
+
+  <ul class="playerScore">
+      <li id="player1Score">player1 score</li>
+      <li id="player2Score">player2 score</li>
+  </ul>
+</div>
+<div id ="replayBtn"> Retake Quiz </div>
+</div class = "main">
+
+<script type= "text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type= "text/javascript" src= "main.js"></script>
+
+<object data="Music/Singapore National Day Video - Home - Kit Chan.mp3">
+  <param name="autoplay" value="true">
+</object>
+
+
+
+</body>
 </html>
