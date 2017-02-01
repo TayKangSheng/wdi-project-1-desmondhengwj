@@ -1,7 +1,24 @@
-[How to write readme - Markdown CheatSheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)  
-[How to write a good readme for github repo!](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
+Our Singapore Story - Quiz
 
-# Project Name
-<!---
-Read Me Contents
--->
+
+
+
+
+
+Credits:
+
+Most of my codes were from 	
+
+https://github.com/phistando/Project-1A-Quiz-Game-  	
+
+https://github.com/chriskhoo/1A-Quiz
+
+Most of my questions were gotten from
+
+thesmartlocal.com/read/12-mind-blowing-singapore-facts
+
+https://mustsharenews.com/things-never-guessed-singapore/
+
+thenewageparents.com/49-interesting-facts-about-singapore-we-bet-you-didnt-know/
+
+http://www.yoursingapore.com/editorials/10-amazing-things-you-never-knew-about-singapore.html
