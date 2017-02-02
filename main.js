@@ -1,4 +1,5 @@
 $(document).ready(function () {
+// 1st function: function Question
   function Question (qn, ans, correctAnsIndex) {
     this.question = qn
     this.choices = ans
@@ -33,34 +34,40 @@ $(document).ready(function () {
     player2Points: 0
   }
 
+// 2nd function: function numberOfQuestions
+
   function numberOfQuestions () {
     return 10
   }
 
-  // function shuffle (a) {
-  //   var j, x, i
-  //   for (i = a.length; i; i -= 1) {
-  //     j = Math.floor(Math.random() * i)
-  //     x = a[i - 1]
-  //     a[i - 1] = a[j]
-  //     a[j] = x
-  //   }
-  // // }
-  //
-  // shuffle(quiz.totalQns)
+// 3rd function: function shuffle
+// http://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
+  function shuffle (a) {
+    for (let i = a.length; i; i--) {
+      let j = Math.floor(Math.random() * i);
+      [a[i - 1], a[j]] = [a[j], a[i - 1]]
+    }
+  }
+  // }
 
+  shuffle(quiz.totalQns)
+
+// 4th function: function currentQuestion
   function currentQuestion () {
     return quiz.currentQns
   }
 
+// 5th function: function numberOfChoices
   function numberOfChoices () {
     return quiz.totalQns[currentQuestion()].correctAnswer
   }
 
+// 6th function: function numberOfChoices
   function numberOfChoices () {
     return quiz.totalQns[quiz.currentQns].choices.length
   }
 
+// 7th function: function playTurn
   function playTurn (selection) {
     var playerAns
 
@@ -88,6 +95,7 @@ $(document).ready(function () {
     return playerAns
   }
 
+// 8th function: function isGameOver
   function isGameOver () {
     if (quiz.isGameOver === true) {
       return true
@@ -96,6 +104,7 @@ $(document).ready(function () {
     }
   }
 
+// 9th function: function whoWon
   function whoWon () {
     if (isGameOver() === false) {
       return 0
@@ -108,6 +117,7 @@ $(document).ready(function () {
     }
   }
 
+// 10th function: function restart
   function restart () {
     quiz.currentQns = 0
     quiz.isGameOver = false
@@ -116,6 +126,7 @@ $(document).ready(function () {
     location.reload()
   }
 
+// 11th function: function updateQuiz
   function updateQuiz () {
     if (quiz.currentQns % 2 === 0) {
       $('#QnNo').html('Question ' + (currentQuestion() + 1) + ' ' + '(Player One)')
@@ -148,14 +159,15 @@ $(document).ready(function () {
       selection = 1
     }
 
-  //   if (isGameOver() === true) {
-  //     $j('.ansButton').attr('onclick', '').unbind('click')
-  //   }
-  //
-  //   playTurn(selection)
-  //   updateQuiz()
-  // })
+    if (isGameOver() === true) {
+      $j('.ansButton').attr('onclick', '').unbind('click')
+    }
 
+    playTurn(selection)
+    updateQuiz()
+  })
+
+// 12th function: function hide
   function hide () {
     $('#startQuizBtn').style.display = 'none'
   }
