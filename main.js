@@ -1,13 +1,10 @@
 $(document).ready(function () {
-// 1st function: function Question
+// define Question object using constructor method
   function Question (qn, ans, correctAnsIndex) {
     this.question = qn
     this.choices = ans
     this.correctAnswer = correctAnsIndex
   }
-
-  // var player1Name = prompt("Player 1's name")
-  // var player2Name = prompt("Player 2's name")
 
   var qn0 = new Question('Bukit Timah is about 166m high.', ['True', 'False'], 0)
   var qn1 = new Question('The oldest building at Clarke Quay is The Central', ['True', 'False'], 1)
@@ -26,6 +23,7 @@ $(document).ready(function () {
   var qn14 = new Question('Singapore has the highest man-made waterfall in the world.', ['True', 'False'], 0)
   var qn15 = new Question('Singapore has the highest density of McDonald\'s in the world.', ['True', 'False'], 0)
 
+// define Quiz Object with total quiz questions, default players score points and game progress status
   var quiz = {
     currentQns: 0,
     totalQns: [qn0, qn1, qn2, qn3, qn4, qn5, qn6, qn7, qn8, qn9, qn10, qn11, qn12, qn13, qn14, qn15],
@@ -34,53 +32,60 @@ $(document).ready(function () {
     player2Points: 0
   }
 
-// 2nd function: function numberOfQuestions
-
+// 1. numberOfQuestions()
+// It should return an integer that is the number of questions in a game
   function numberOfQuestions () {
     return 10
   }
 
-// 3rd function: function shuffle
-// http://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
+// to shuffle the array: totalQns
   function shuffle (a) {
-    for (let i = a.length; i; i--) {
-      let j = Math.floor(Math.random() * i);
-      [a[i - 1], a[j]] = [a[j], a[i - 1]]
+    var j, x, i
+    for (i = a.length; i; i -= 1) {
+      j = Math.floor(Math.random() * i)
+      x = a[i - 1]
+      a[i - 1] = a[j]
+      a[j] = x
     }
   }
-  // }
 
   shuffle(quiz.totalQns)
 
-// 4th function: function currentQuestion
+// 2. currentQuestion()
+// It should return an integer that is the zero-based index of the current question in the quiz
   function currentQuestion () {
     return quiz.currentQns
   }
 
-// 5th function: function numberOfChoices
-  function numberOfChoices () {
+// 3. correctAnswer()
+// It should return an integer that is the zero-based index the correct answer for the currrent question
+
+  function correctAnswer () {
     return quiz.totalQns[currentQuestion()].correctAnswer
   }
 
-// 6th function: function numberOfChoices
+// 4. numberOfChoices()
+// It should return an integer that is the number of choices for the current question
   function numberOfChoices () {
-    return quiz.totalQns[quiz.currentQns].choices.length
+    return quiz.totalQns[quiz.currentQns].choices.length // not necessary in this quiz
   }
 
-// 7th function: function playTurn
+// 5. playTurn(choice)
+// It should take a single integer, which specifies which choice the current player wants to make. It should return a boolean true/false if the answer is correct.
   function playTurn (selection) {
     var playerAns
 
-    if (quiz.isGameOver === true) {
+    if (quiz.isGameOver === true) // to stop player turn when quiz.isGameOver is true
+  {
       return false
     }
 
     if (correctAnswer() === selection) {
       playerAns = true
       if (quiz.currentQns % 2 === 0) {
-        quiz.player1Points++
+        quiz.player1Points ++
       } else if (quiz.currentQns % 2 !== 0) {
-        quiz.player2Points++
+        quiz.player2Points ++
       }
     }
 
@@ -95,7 +100,8 @@ $(document).ready(function () {
     return playerAns
   }
 
-// 8th function: function isGameOver
+// 6. isGameOver()
+// It should return a true or false if the quiz is over.
   function isGameOver () {
     if (quiz.isGameOver === true) {
       return true
@@ -104,29 +110,33 @@ $(document).ready(function () {
     }
   }
 
-// 9th function: function whoWon
+// 7. whoWon()
+// It should return 0 if the game is not yet finished. Else it should return either 1 or 2 depending on which player won. It should return 3 if the game is a draw.
   function whoWon () {
     if (isGameOver() === false) {
       return 0
-    } else if (quiz.player1Points > quiz.player2Points) {
+    } else if
+  (quiz.player1Points > quiz.player2Points) {
       return 1
-    } else if (quiz.player2Points > quiz.player1Points) {
+    } else if
+  (quiz.player2Points > quiz.player1Points) {
       return 2
-    } else if (quiz.player1Points === quiz.player2Points) {
+    } else if
+  (quiz.player1Points === quiz.player2Points) {
       return 3
     }
   }
-
-// 10th function: function restart
+// 8. restart()
+// It should restart the game so it can be played again.
   function restart () {
     quiz.currentQns = 0
     quiz.isGameOver = false
     quiz.player1Points = 0
     quiz.player2Points = 0
-    location.reload()
+    location.reload()        // to reload browser page
   }
 
-// 11th function: function updateQuiz
+// function to update scores,questions and quiz outcome after click selections from players
   function updateQuiz () {
     if (quiz.currentQns % 2 === 0) {
       $('#QnNo').html('Question ' + (currentQuestion() + 1) + ' ' + '(Player One)')
@@ -135,8 +145,8 @@ $(document).ready(function () {
     }
 
     $('#quizQns').html(quiz.totalQns[currentQuestion()].question)
-    $('#player1Score').html('Player 1' + ' : ' + quiz.player1Points)
-    $('#player2Score').html('Player 2' + ' : ' + quiz.player2Points)
+    $('#player1Score').html('Player One: ' + quiz.player1Points)
+    $('#player2Score').html('Player Two: ' + quiz.player2Points)
 
     if (isGameOver() === true) {
       $('#QnNo').text('')
@@ -145,10 +155,11 @@ $(document).ready(function () {
       } else {
         $('#quizQns').text('Game Over! Player ' + whoWon() + ' wins!')
       }
-      $('#replayBtn').toggle()
+      $('#replayBtn').toggle() // display replay-quiz button when game is over
     }
   }
 
+// To get click selections from players and update quiz content
   $('.ansButton').click(function () {
     var selection
     var choice = this.id
@@ -160,14 +171,14 @@ $(document).ready(function () {
     }
 
     if (isGameOver() === true) {
-      $j('.ansButton').attr('onclick', '').unbind('click')
+      $j('.ansButton').attr('onclick', '').unbind('click') // to stop ansButton when game is over
     }
 
     playTurn(selection)
     updateQuiz()
   })
 
-// 12th function: function hide
+// To hide startQuizBtn button after clicking and display quiz content
   function hide () {
     $('#startQuizBtn').style.display = 'none'
   }
@@ -178,6 +189,7 @@ $(document).ready(function () {
     updateQuiz()
   })
 
+// click replay-quiz button function to activate restart quiz function defined earlier
   $('#replayBtn').click(function () {
     restart()
   })
