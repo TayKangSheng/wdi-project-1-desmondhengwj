@@ -57,8 +57,8 @@ $(document).ready(function () {
     return quiz.currentQns
   }
 
-// 5th function: function numberOfChoices
-  function numberOfChoices () {
+// 5th function: function correctAnswer
+  function correctAnswer () {
     return quiz.totalQns[currentQuestion()].correctAnswer
   }
 
