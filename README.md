@@ -8,21 +8,6 @@
 
 
 
-Credits:
-
-I got most of my codes from 
-
-*WDI Alumnis Phistando & ChrisKhoo*
-
-I got my quiz questions from 
-
-[The Smart Local - 12 mind-blowing Singapore facts](thesmartlocal.com/read/12-mind-blowing-singapore-facts)
-
-[Must Share News - Things Never Guessed About Singapore](https://mustsharenews.com/things-never-guessed-singapore/)
-
-[The New Age Parents - 49 Interesting Facts about Singapore](https://thenewageparents.com/49-interesting-facts-about-singapore-we-bet-you-didnt-know/)
-
-[Your Singapore - 10 Amazing Things You Never Knew About Singapore](http://www.yoursingapore.com/editorials/10-amazing-things-you-never-knew-about-singapore.html)
 
 
 
