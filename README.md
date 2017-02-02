@@ -10,15 +10,15 @@
 
 Credits:
 
-I got my inspiration from 
+I got most of my codes from 
 
-https://github.com/phistando/Project-1A-Quiz-Game-  	
+*WDI Alumnis Phistando & ChrisKhoo*
 
-https://github.com/chriskhoo/1A-Quiz
+I got my quiz questions from 
 
-I got the quiz questions from 
+[I'm an inline-style link](thesmartlocal.com/read/12-mind-blowing-singapore-facts)
 
-thesmartlocal.com/read/12-mind-blowing-singapore-facts
+
 
 https://mustsharenews.com/things-never-guessed-singapore/
 
