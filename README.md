@@ -57,6 +57,8 @@ To be more mobile friendly!
 
 ## Credits
 
+Credit most to my instructor Prima, TA Kang Sheng, and classmates who helped me! :)
+
 I got most of my codes from 
 
 *WDI Alumnis Phistando & ChrisKhoo*
