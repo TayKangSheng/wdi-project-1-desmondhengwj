@@ -34,7 +34,7 @@ It's just for a little fun!
 
 ## Interesting Things
 
-# let function in shuffle
+"#" let function in shuffle
 
 let allows you to declare variables that are limited in scope to the block, statement, or expression on which it is used. This is unlike the var keyword, which defines a variable globally, or locally to an entire function regardless of block scope. - MDN
 
