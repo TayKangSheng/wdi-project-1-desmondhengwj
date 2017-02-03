@@ -49,6 +49,12 @@ Function --> The function that is to be no longer executed.<br />
 http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 http://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
 
+# css visibility
+
+object { <br />
+    visibility: hidden;<br />
+}<br />
+
 
 ## Contribute
 
