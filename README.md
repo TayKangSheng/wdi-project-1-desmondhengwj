@@ -15,9 +15,9 @@ It's just for a little fun!
 
 ## Breakdown of Game
 
---> create multiple questions 
---> function numberOfQuestions
---> function shuffle
+--> create multiple questions <br />
+--> function numberOfQuestions <br />
+--> function shuffle <br />
 --> function currentQuestion
 --> function correctAnswer
 --> function numberOfChoices
