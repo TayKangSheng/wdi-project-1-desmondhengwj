@@ -18,19 +18,19 @@ It's just for a little fun!
 --> create multiple questions <br />
 --> function numberOfQuestions <br />
 --> function shuffle <br />
---> function currentQuestion
---> function correctAnswer
---> function numberOfChoices
---> function playTurn
---> function isGameOver
---> function whoWon
---> function restart
---> function updateQuiz
+--> function currentQuestion <br />
+--> function correctAnswer <br />
+--> function numberOfChoices <br />
+--> function playTurn <br />
+--> function isGameOver <br />
+--> function whoWon <br />
+--> function restart <br />
+--> function updateQuiz <br />
 
 ## Codes
 
---> function shuffle allows for us to shuffle the total number of questions in the quiz. 
---> function playTurn 
+--> function shuffle allows for us to shuffle the total number of questions in the quiz. <br />
+--> function playTurn <br />
 
 ## Interesting Things
 
