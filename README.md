@@ -40,9 +40,9 @@ let allows you to declare variables that are limited in scope to the block, stat
 
 # unbind 
 
-Available in jQuery
-String --> A string containing one or more DOM event types, such as "click" or "submit," or custom event names.
-Function --> The function that is to be no longer executed.
+Available in jQuery<br />
+String --> A string containing one or more DOM event types, such as "click" or "submit," or custom event names.<br />
+Function --> The function that is to be no longer executed.<br />
 
 # shuffle function
 
